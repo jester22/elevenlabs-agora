@@ -1,5 +1,13 @@
-import VoiceComponent from "@/components/VoiceComponent";
-import VideoComponent from "@/components/VideoComponent";
+"use client";
+import dynamic from 'next/dynamic';
+
+const VideoComponent = dynamic(() => import('@/components/VideoComponent'), {
+  ssr: false,
+});
+
+const VoiceComponent = dynamic(() => import('@/components/VoiceComponent'), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
